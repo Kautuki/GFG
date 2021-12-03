@@ -1,0 +1,27 @@
+static ArrayList<String> generate(int N)
+    {
+        // Your code here
+        ArrayList<String> ans= new ArrayList<>();
+        for(int i=1;i<N+1;i++)
+        {
+            int n=i;
+            String temp="";
+
+            while(n>0)
+            {
+                int p=n%2;
+                temp=temp+p;
+                n=n/2;
+            }
+            String finaled="";
+           for(int z=0;z<temp.length();z++)
+           {
+               char ch=temp.charAt(z);
+               finaled=ch+finaled;
+           }
+           
+            ans.add(finaled);
+        }
+        
+        return ans;
+    }

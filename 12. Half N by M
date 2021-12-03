@@ -1,0 +1,13 @@
+class Solution{
+    static int mthHalf(int N, int M){
+        // code here
+        int t=N;
+        for(int i=0;i<M-1;i++)
+        {
+            N=t/2;
+            t=N;
+      
+        }
+        return N;
+    }
+}

@@ -1,0 +1,25 @@
+class Solution {
+    static int maximizeMoney(int N , int K) {
+        // code here
+        int ans=0;
+        int max=0;
+        if(N==1 || N==2)
+        {
+            max=K;
+        }
+        else
+        {
+            int t=N/2;
+            if(N%2==0)
+            {
+            max=t*K;
+            }
+            else
+            {
+                t=t+1;
+                max=t*K;
+            }
+        }
+        return max;
+    }
+};

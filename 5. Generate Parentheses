@@ -1,0 +1,22 @@
+public List<String> AllParenthesis(int n) 
+    {
+        List<String> ans=new ArrayList<>();
+        backtrack(ans,"",0,0,n);
+        return ans;
+    }
+    public void backtrack(List<String> ans,String op,int open,int close,int max)
+    {
+        if(op.length() == max*2)
+        {
+            ans.add(op);
+            return;
+        }
+        if(open <max)
+        {
+            backtrack(ans, op+'(',open+1,close,max);
+        }
+        if(close<open)
+        {
+            backtrack(ans,op+')',open,close+1,max);
+        }
+    }

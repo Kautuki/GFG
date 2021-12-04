@@ -1,0 +1,27 @@
+class Solution{
+    static int isBitSet(int N){
+        //code here
+        if(N==0)return 0;
+        
+        int p=N;
+        int flag=0;
+        while(p>0)
+        {
+            int r=p%2;
+            if(r==0)
+            {
+                flag=1;
+                break;
+            }
+            p=p/2;
+        }
+        if(flag==1)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+}

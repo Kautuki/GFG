@@ -1,0 +1,32 @@
+class Solution
+{
+    //Function to return the maximum sum of non-adjacent nodes.
+ 
+    static int getMaxSum(Node root)
+    {
+        // add your code here
+           HashMap<Node,Integer> hm=new HashMap<>();
+        if(root == null) return 0;
+       
+        
+        int included=root.data;
+        if(root.left != null)
+        {
+            included=included+getMaxSum(root.left.left);
+            included=included+getMaxSum(root.left.right);
+        }
+        if(root.right != null)
+        {
+            included=included+getMaxSum(root.right.left);
+            included=included+getMaxSum(root.right.right);
+        }
+        
+        int excluded = getMaxSum(root.left)+getMaxSum(root.right);
+        
+        int ans=Math.max(included,excluded);
+        
+        return ans;
+        
+        
+    }
+}

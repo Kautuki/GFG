@@ -1,0 +1,28 @@
+class Solution {
+
+    public static int countPairs(LinkedList<Integer> head1, LinkedList<Integer> head2,
+                          int x) {
+        // add your code here
+        int count = 0;
+          
+        // traverse the 1st linked list
+        Iterator<Integer> itr1 = head1.iterator();
+        while(itr1.hasNext())
+        {
+            // for each node of 1st list
+            // traverse the 2nd list
+            Iterator<Integer> itr2 = head2.iterator();
+            Integer t = itr1.next();
+            while(itr2.hasNext())
+            {
+                // if sum of pair is equal to 'x'
+                // increment count
+                if ((t + itr2.next()) == x)
+                    count++;
+            }
+        }
+                            
+        // required count of pairs    
+        return count;
+    }
+}
